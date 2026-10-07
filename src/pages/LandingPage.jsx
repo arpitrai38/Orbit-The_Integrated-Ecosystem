@@ -1,0 +1,11 @@
+import React from 'react';
+import { useNavigate } from 'react-router-dom';
+import Box from '@mui/material/Box';
+import Button from '@mui/material/Button';
+import Card from '@mui/material/Card';
+import Typography from '@mui/material/Typography';
+import { ArrowRight, GraduationCap, ShieldCheck } from 'lucide-react';
+import { ResponsiveContainer } from '../components/common/ResponsiveContainer';
+import { ROUTES } from '../routes/routeConfig';
+export const LandingPage = () => { const navigate = useNavigate(); return <ResponsiveContainer><Card sx={{ p: { xs: 3, md: 6 }, mt: 2, borderRadius: 4, background: 'linear-gradient(135deg, #EFF6FF, #FFFFFF)', border: '1px solid #BFDBFE' }}><ShieldCheck size={34} color="#1E6BFF"/><Typography variant="h2" sx={{ fontWeight: 800, mt: 2 }}>ORBIT College ERP</Typography><Typography variant="h6" color="primary" sx={{ mt: 1 }}>A clean workspace for your institution</Typography><Typography variant="body1" color="text.secondary" sx={{ maxWidth: 650, mt: 2 }}>No sample institutional data is displayed. Set up your own students, staff, departments, classes, fees and transport records through the Admin portal.</Typography><Button variant="contained" endIcon={<ArrowRight size={18}/>} onClick={() => navigate(ROUTES.AUTH.LOGIN)} sx={{ mt: 3, textTransform: 'none', bgcolor: '#1E6BFF' }}>Sign in to set up the college</Button><Box sx={{ display: 'flex', gap: 1, alignItems: 'center', mt: 4 }}><GraduationCap size={18} color="#64748B"/><Typography variant="caption" color="text.secondary">Data appears only after your administrator adds it.</Typography></Box></Card></ResponsiveContainer>; };
+export default LandingPage;
